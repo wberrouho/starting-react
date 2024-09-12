@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react'
-// import pokemon from './pokemon.json';
 import propTypes from 'prop-types';
 
 const PokemonRow = ({ pokemon, onSelect }) =>
@@ -58,8 +57,8 @@ function App() {
   React.useEffect(
     () => {
       fetch("http://localhost:3000/starting-react/pokemon.json")
-      .then((resp)=>resp.json())
-      .then((data)=>pokemonSet(data));
+        .then((resp) => resp.json())
+        .then((data) => pokemonSet(data));
 
     },
     []
