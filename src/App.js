@@ -1,6 +1,7 @@
 import './App.css';
+import React from 'react'
 import pokemon from './pokemon.json';
-import propTypes from 'prop-types'
+import propTypes from 'prop-types';
 
 const PokemonRow = ({ pokemon }) =>
 (
@@ -18,6 +19,7 @@ PokemonRow.propTypes = {
 })
 };
 function App() {
+  const [filter,filterSet] = React.useState("");
   return (
     <div className='title'>
       <h1
@@ -28,6 +30,10 @@ function App() {
 
         }}
       >Pokemon search</h1>
+      <input value={filter}
+      onChange={(evt)=>filterSet(evt.target.value)}
+      />
+      
       <table width="100%">
         <thead>
           <tr>
@@ -37,7 +43,7 @@ function App() {
         </thead>
         <tbody>
 
-          {pokemon.slice(0, 20).map((pokemon) => (
+          {pokemon.filter((pokemon ) => pokemon.name.english.toLowerCase().includes(filter.toLowerCase())).slice(0, 20).map((pokemon) => (
             <PokemonRow pokemon={pokemon} key={[pokemon.id, pokemon.name.english].join(':')} />
           )
           )}

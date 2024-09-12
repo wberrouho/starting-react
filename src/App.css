@@ -9,3 +9,8 @@ td{
   text-align : left;
   font-size : large;
 }
+input{
+  width:100%;
+  font-size :x-large;
+  padding : 0.2rem;
+}
