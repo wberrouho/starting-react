@@ -2,14 +2,16 @@ import './App.css';
 import React from 'react'
 import propTypes from 'prop-types';
 import styled from "@emotion/styled";
+import { Button } from '@mui/material';
 
 const PokemonRow = ({ pokemon, onSelect }) =>
 (
   <tr>
     <td>{pokemon.name.english}</td>
     <td>{pokemon.type.join(',')}</td>
-    <td><button
-      onClick={() => onSelect(pokemon)}>Select!</button></td>
+    <td><Button
+     variant="outlined" 
+      onClick={() => onSelect(pokemon)}>Select!</Button></td>
   </tr>
 );
 
