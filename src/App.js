@@ -95,7 +95,9 @@ function App() {
                 <th>Type </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style={
+              {textAlign : 'center'}
+            }>
 
               {pokemon.filter((pokemon) => pokemon.name.english.toLowerCase()
                 .includes(filter.toLowerCase()))
